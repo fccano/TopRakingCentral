@@ -14,7 +14,7 @@ rank,item,repo_name,stars,forks,language,repo_url,username,issues,last_commit,de
 13,top-100-stars,coding-interview-university,72294,21034,,https://github.com/jwasham/coding-interview-university,jwasham,57,2018-12-17T06:09:19Z,A complete computer science study plan to become a software engineer.
 14,top-100-stars,react-native,72006,16101,JavaScript,https://github.com/facebook/react-native,facebook,881,2018-12-18T13:48:45Z,A framework for building native apps with React.
 15,top-100-stars,electron,67763,8831,C++,https://github.com/electron/electron,electron,1229,2018-12-18T11:07:04Z,":electron: Build cross-platform desktop apps with JavaScript, HTML, and CSS"
-16,top-100-stars,linux,67013,24286,C,https://github.com/torvalds/linux,torvalds,245,2018-12-18T14:05:29Z,Linux kernel source tree
+16,top-100-stars,linux,67013,24286,C,https://github.com/torvalds/linux,torvalds,245,2018-12-18T14:05:29Z,Linux kernel source tr
 17,top-100-stars,vscode,65864,8794,TypeScript,https://github.com/Microsoft/vscode,Microsoft,4652,2018-12-18T15:00:22Z,Visual Studio Code
 18,top-100-stars,developer-roadmap,63172,9972,,https://github.com/kamranahmedse/developer-roadmap,kamranahmedse,147,2018-12-11T08:43:51Z,Roadmap to becoming a web developer in 2018
 19,top-100-stars,create-react-app,60781,13242,JavaScript,https://github.com/facebook/create-react-app,facebook,330,2018-12-18T13:54:45Z,Set up a modern web app by running one command.
