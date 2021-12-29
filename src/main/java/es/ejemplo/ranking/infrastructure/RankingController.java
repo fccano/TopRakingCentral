@@ -1,10 +1,9 @@
 package es.ejemplo.ranking.infrastructure;
 
 import es.ejemplo.ranking.application.TopRankingCalculatorService;
-import es.ejemplo.ranking.domain.Repo;
+import es.ejemplo.ranking.domain.ItemInRank;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -14,7 +13,7 @@ public final class RankingController {
     private final TopRankingCalculatorService topRankingCalculatorService;
 
     public RankingController(TopRankingCalculatorService topRankingCalculatorService) {
-        this.topRankingCalculatorService = new TopRankingCalculatorService();
+        this.topRankingCalculatorService = new TopRankingCalculatorService(new CSVItemInRankRepository());
         //TODO: Habría que conseguir inyectar este Servicio, no instanciar aquí
     }
 
