@@ -31,21 +31,24 @@ public class MockTopRankingCalculatorServiceTest extends RankingApplicationUnitT
         String repo4 = "4,top-100-stars,react,117818,21368,JavaScript,https://github.com/facebook/react,facebook,516,2018-12-18T01:58:28Z,\"A declarative, efficient, and flexible JavaScript library for building user interfaces.\"\n";
 
 
-        List<String> expectedTopReposList =  new ArrayList<>();
-        expectedTopReposList.add(repo1);
+        List<String> mockedRepositoryResult =  new ArrayList<>();
+        mockedRepositoryResult.add(repo1);
        // expectedTopReposList.add(repo2); //Este no lo añadimos porque no es de tipo JavaScript y no queremos que lo devuelva el repo para este test.
-        expectedTopReposList.add(repo3);
-        expectedTopReposList.add(repo4);
+        mockedRepositoryResult.add(repo3);
+        mockedRepositoryResult.add(repo4);
 
         //Hasta aquí definimos lo que hace el mock en este test en concreto, que es devolver "todos" los repos JavaScript
-        when(mockedItemInRankRepository.searchAllLanguageItems("JavaScript")).thenReturn(expectedTopReposList);
+        when(mockedItemInRankRepository.searchAllLanguageItems("JavaScript")).thenReturn(mockedRepositoryResult);
 
-        //Ahora llamamos al Servicio de Aplicación pidiendole que nos devuelva los de tipo
+        //Ahora llamamos al Servicio de Aplicación pidiéndole que nos devuelva los de tipo JavaScript. Concretamente el primero.
         List<String> repoJavaScriptConMasEstrellas = topRankingCalculatorService.calculate("JavaScript",1);
 
-        //Comprobamos que lo que devuelve el servicio de aplicación es lo que esperamos, es decir, el repo1.
-        Assertions.assertEquals(repo1,repoJavaScriptConMasEstrellas.get(0));
+        //Y esta será la lista esperada
+        List<String> expectedTopRankingResult = new ArrayList<>();
+        expectedTopRankingResult.add(repo1);
 
+        //Comprobamos que lo que devuelve el servicio de aplicación es lo que esperamos, es decir, el repo1.
+        Assertions.assertEquals(expectedTopRankingResult, repoJavaScriptConMasEstrellas);
     }
 
 }

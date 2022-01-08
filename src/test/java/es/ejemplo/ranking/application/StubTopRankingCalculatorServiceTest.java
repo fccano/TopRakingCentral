@@ -19,6 +19,7 @@ public class StubTopRankingCalculatorServiceTest {
 
     @BeforeEach
     protected void setUp() {
+
         service = new TopRankingCalculatorService(new CSVItemInRankRepository());
     }
 

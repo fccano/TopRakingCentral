@@ -24,10 +24,9 @@ public class CSVItemInRankRepository implements ItemInRankRepository {
             processBuilder = new ProcessBuilder("/bin/sh", "-c", comandoShellAEjecutar);
             Process process = processBuilder.start();
 
-            String commandRead;
-
             BufferedReader stdInput = new BufferedReader(new InputStreamReader(process.getInputStream()));
 
+            String commandRead;
             while ((commandRead = stdInput.readLine()) != null) {
                 listadoReposLenguaje.add(commandRead);
                 log.info(commandRead);
@@ -41,6 +40,7 @@ public class CSVItemInRankRepository implements ItemInRankRepository {
 
         } catch (IOException e) {
             e.printStackTrace();
+
         }
         return listadoReposLenguaje;
     }
