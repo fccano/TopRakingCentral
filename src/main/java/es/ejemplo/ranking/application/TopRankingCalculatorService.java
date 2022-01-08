@@ -1,10 +1,9 @@
 package es.ejemplo.ranking.application;
 
-import es.ejemplo.ranking.domain.ItemInRank;
 import es.ejemplo.ranking.domain.ItemInRankRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 @Service
