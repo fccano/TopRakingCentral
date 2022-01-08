@@ -21,9 +21,9 @@ public class TopRankingCalculatorService {
 
         //TODO: Mejorar este condicional
         if (maxInRank > reposDelLenguajeBuscado.size()) {
-            return reposDelLenguajeBuscado.subList(1, reposDelLenguajeBuscado.size());
+            return reposDelLenguajeBuscado.subList(0, reposDelLenguajeBuscado.size()-1);
         } else {
-            return reposDelLenguajeBuscado.subList(1, maxInRank);
+            return reposDelLenguajeBuscado.subList(0, maxInRank);
         }
     }
 }
