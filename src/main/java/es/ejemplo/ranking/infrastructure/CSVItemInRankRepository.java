@@ -1,14 +1,15 @@
 package es.ejemplo.ranking.infrastructure;
 
-import es.ejemplo.ranking.domain.ItemInRank;
 import es.ejemplo.ranking.domain.ItemInRankRepository;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.stereotype.Repository;
 
 @Log4j2
+@Repository
 public class CSVItemInRankRepository implements ItemInRankRepository {
 
     @Override
