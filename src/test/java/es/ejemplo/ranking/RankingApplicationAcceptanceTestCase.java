@@ -21,8 +21,8 @@ public class RankingApplicationAcceptanceTestCase {
     private MockMvc mockMvc;
 
     @Test
-    public void shouldReturnDefaultMessage() throws Exception {
-        this.mockMvc.perform(get("/actuator/health")).andDo(print()).andExpect(status().isOk());
+    public void shouldReturn200() throws Exception {
+        this.mockMvc.perform(get("/ranking/top?language=JavaScript&maxInRank=6")).andDo(print()).andExpect(status().isOk());
                 //.andExpect(content().string(containsString("Hello, World")));
     }
 }
