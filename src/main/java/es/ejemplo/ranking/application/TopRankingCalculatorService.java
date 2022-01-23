@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class TopRankingCalculatorService {
@@ -18,11 +19,7 @@ public class TopRankingCalculatorService {
 
         List<String> reposDelLenguajeBuscado = repository.searchAllLanguageItems(language);
 
-        //TODO: Mejorar este condicional
-        if (maxInRank > reposDelLenguajeBuscado.size()) {
-            return reposDelLenguajeBuscado.subList(0, reposDelLenguajeBuscado.size()-1);
-        } else {
-            return reposDelLenguajeBuscado.subList(0, maxInRank);
-        }
+        return reposDelLenguajeBuscado.stream().limit(maxInRank).collect(Collectors.toList());
+
     }
 }

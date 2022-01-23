@@ -21,6 +21,7 @@ public class StubTopRankingCalculatorServiceTest {
     protected void setUp() {
 
         service = new TopRankingCalculatorService(new CSVItemInRankRepository());
+        //TODO: Evidentemente esto no está bien. Habría que crear un repositorio específico que devuelva los valores con la lógica predefinida.
     }
 
     @Test

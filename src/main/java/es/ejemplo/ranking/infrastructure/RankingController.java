@@ -2,6 +2,7 @@ package es.ejemplo.ranking.infrastructure;
 
 import es.ejemplo.ranking.application.TopRankingCalculatorService;
 import es.ejemplo.ranking.domain.ItemInRank;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,8 +18,10 @@ public final class RankingController {
     private final TopRankingCalculatorService topRankingCalculatorService;
 
     public RankingController(TopRankingCalculatorService topRankingCalculatorService) {
-        this.topRankingCalculatorService = new TopRankingCalculatorService(new CSVItemInRankRepository());
-        //TODO: Habría que conseguir inyectar este Servicio, no instanciar aquí
+       // this.topRankingCalculatorService = new TopRankingCalculatorService(new CSVItemInRankRepository());
+        //Inyectamos el servicio, que a su vez tiene inyectado el único repositorio que existe. No hace falta instanciación explícita.
+        this.topRankingCalculatorService = topRankingCalculatorService;
+
     }
 
     @GetMapping("/top")
